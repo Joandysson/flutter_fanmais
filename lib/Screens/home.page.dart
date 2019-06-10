@@ -1,6 +1,7 @@
+import 'package:aplicativo/Screens/horario.page.dart';
 import 'package:flutter/material.dart';
-import './other.page.dart';
 import 'login.page.dart';
+import 'Components/aviso-card.component.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.green[900],
         title: Text('Home'),
       ),
       drawer: Drawer(
@@ -45,13 +46,13 @@ class _HomePageState extends State<HomePage> {
               trailing: Icon(Icons.arrow_upward),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) =>
-                      OtherPage('Notas e Faltas'))),
+                      HorarioPage())),
             ),
             ListTile(
               title: Text('Horário'),
               trailing: Icon(Icons.arrow_right),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => OtherPage('Horários'))),
+                  builder: (BuildContext context) => HorarioPage())),
             ),
             Divider(),
             ListTile(
@@ -64,43 +65,23 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: ListView(
-          padding: EdgeInsets.only(
-              top: 10,
-              right: 10,
-              left: 10
-          ),
-          children: <Widget>[
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-              AvisoCard(),
-
-          ]
+        padding: EdgeInsets.only(
+          top: 10,
+          right: 10,
+          left: 10
+        ),
+        children: <Widget>[
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+          avisoCardComponent(context),
+        ]
       ),
     );
   }
-}
-
-Widget AvisoCard () {
-    return new Card(
-        margin: EdgeInsets.only(
-            bottom: 10
-        ),
-        child: InkWell(
-            splashColor: Colors.blue.withAlpha(30),
-            onTap: () {
-                print('Card tapped.');
-            },
-            child: Container(
-                width: 300,
-                height: 100,
-                child: Text('A card that can be tapped'),
-            ),
-        ),
-    );
 }

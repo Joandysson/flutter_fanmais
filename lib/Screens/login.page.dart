@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'home.page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,61 +18,84 @@ class LoginPage extends StatelessWidget {
         right: 40,
       ),
       decoration: BoxDecoration(
-        color: Colors.green,
-        image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-            Colors.green.withOpacity(0.9),
-            BlendMode.multiply,
-          ),
-          image: AssetImage('assets/images/login.jpg'),
-          fit: BoxFit.cover,
-        ),
+        color: Colors.white,
       ),
       child: ListView(children: <Widget>[
         SizedBox(
-          width: 1,
-          height: 250,
+          height: 40,
         ),
-        TextFormField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            labelText: 'Matricula',
-            labelStyle: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w400,
-              fontSize: 20,
-            ),
-          ),
+        Image(
+          height: 200,
+          image: AssetImage('assets/images/logo.png'),
+        ),
+        SizedBox(
+          height: 40,
+        ),
+        Text(
+          'Insira suas informações \npara continuar',
+          textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            color: Colors.black45,
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 40,
         ),
-        TextFormField(
-          keyboardType: TextInputType.text,
-          decoration: InputDecoration(
-              labelText: 'Senha',
-              labelStyle: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20)),
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-          ),
-        ),
+        Container(
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            decoration: BoxDecoration(
+                color: Colors.black12, borderRadius: BorderRadius.circular(50)),
+            child: TextFormField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  icon: Icon(
+                    Icons.supervised_user_circle,
+                    color: Colors.black,
+                  )),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            )),
         SizedBox(
           height: 20,
         ),
         Container(
-          height: 60,
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            decoration: BoxDecoration(
+                color: Colors.black12, borderRadius: BorderRadius.circular(50)),
+            child: TextFormField(
+              obscureText: true,
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                icon: Icon(
+                  Icons.verified_user,
+                  color: Colors.black,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            )),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 50,
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(50)),
+            color: Colors.green[900],
+            borderRadius: BorderRadius.circular(50),
           ),
           child: SizedBox.expand(
             child: FlatButton(
@@ -75,15 +103,12 @@ class LoginPage extends StatelessWidget {
                 'Fazer Login',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                    fontSize: 20),
+                    color: Colors.white,
+                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
-              onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => HomePage()
-                  )
-              ),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => HomePage())),
             ),
           ),
         ),
