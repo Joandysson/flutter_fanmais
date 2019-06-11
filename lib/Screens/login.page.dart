@@ -86,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                 fontSize: 16,
                 color: Colors.black,
               ),
-            )),
+            ),
+          ),
         SizedBox(
           height: 20,
         ),

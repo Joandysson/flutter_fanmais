@@ -1,4 +1,6 @@
+import 'package:aplicativo/Screens/email.page.dart';
 import 'package:aplicativo/Screens/horario.page.dart';
+import 'package:aplicativo/Screens/notas.page.dart';
 import 'package:flutter/material.dart';
 import 'login.page.dart';
 import 'Components/aviso-card.component.dart';
@@ -42,17 +44,23 @@ class _HomePageState extends State<HomePage> {
               onTap: () => Navigator.of(context).pop(),
             ),
             ListTile(
-              title: Text('Notas e Faltas'),
+              title: Text('Notas'),
               trailing: Icon(Icons.arrow_upward),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) =>
-                      HorarioPage())),
+                      NotasFaltasPage())),
             ),
             ListTile(
               title: Text('Horário'),
               trailing: Icon(Icons.arrow_right),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => HorarioPage())),
+            ),
+            ListTile(
+              title: Text('Enviar E-mail'),
+              trailing: Icon(Icons.email),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => EmailPage())),
             ),
             Divider(),
             ListTile(

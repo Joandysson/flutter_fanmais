@@ -1,4 +1,4 @@
-import 'package:aplicativo/Screens/notas.page.dart';
+import 'package:aplicativo/Screens/splash.page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -6,6 +6,6 @@ void main() => runApp(
       theme: ThemeData(
         primarySwatch: Colors.green
       ),
-    home: NotasFaltasPage()
+    home: SplashPage()
   )
 );
