@@ -2,7 +2,7 @@ import 'package:aplicativo/Screens/email.page.dart';
 import 'package:aplicativo/Screens/horario.page.dart';
 import 'package:aplicativo/Screens/notas.page.dart';
 import 'package:flutter/material.dart';
-import 'Components/arquivos.page.dart';
+import 'package:aplicativo/Screens/arquivos.page.dart';
 import 'login.page.dart';
 import 'Components/aviso-card.component.dart';
 
