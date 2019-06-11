@@ -28,8 +28,7 @@ class _HomePageState extends State<HomePage> {
               currentAccountPicture: GestureDetector(
                 onTap: () {},
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://avatars3.githubusercontent.com/u/19675682?s=460&v=4'),
+                  backgroundImage: AssetImage('assets/images/avatar.jpg'),
                 ),
               ),
               decoration: BoxDecoration(
