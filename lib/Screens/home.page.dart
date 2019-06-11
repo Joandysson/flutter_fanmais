@@ -2,6 +2,7 @@ import 'package:aplicativo/Screens/email.page.dart';
 import 'package:aplicativo/Screens/horario.page.dart';
 import 'package:aplicativo/Screens/notas.page.dart';
 import 'package:flutter/material.dart';
+import 'Components/arquivos.page.dart';
 import 'login.page.dart';
 import 'Components/aviso-card.component.dart';
 
@@ -32,29 +33,38 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    'http://majatravels.com/wp-content/uploads/2017/01/high-atlas-mountains3-1024x683.jpg'),
-              )),
+                image: DecorationImage(
+                  colorFilter: new ColorFilter.mode(
+                    Colors.green[900].withOpacity(0.9),
+                    BlendMode.multiply,
+                  ),
+                  image: AssetImage('assets/images/fanese.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             ListTile(
               title: Text('Home'),
-              trailing: Icon(Icons.add_to_home_screen),
+              trailing: Icon(Icons.home),
               onTap: () => Navigator.of(context).pop(),
             ),
             ListTile(
               title: Text('Notas'),
-              trailing: Icon(Icons.arrow_upward),
+              trailing: Icon(Icons.note_add),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      NotasFaltasPage())),
+                  builder: (BuildContext context) => NotasFaltasPage())),
             ),
             ListTile(
               title: Text('Horário'),
-              trailing: Icon(Icons.arrow_right),
+              trailing: Icon(Icons.hourglass_empty),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => HorarioPage())),
+            ),
+            ListTile(
+              title: Text('Arquivos'),
+              trailing: Icon(Icons.file_download),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => ArquivosPage())),
             ),
             ListTile(
               title: Text('Enviar E-mail'),
@@ -64,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Divider(),
             ListTile(
-              title: Text('Close'),
+              title: Text('Sair'),
               trailing: Icon(Icons.cancel),
               onTap: () => Navigator.of(context).pop(MaterialPageRoute(
                   builder: (BuildContext context) => LoginPage())),
@@ -73,23 +83,18 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.only(
-          top: 10,
-          right: 10,
-          left: 10
-        ),
-        children: <Widget>[
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-          avisoCardComponent(context),
-        ]
-      ),
+          padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+          children: <Widget>[
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+            avisoCardComponent(context),
+          ]),
     );
   }
 }
