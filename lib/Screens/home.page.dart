@@ -3,7 +3,6 @@ import 'package:aplicativo/Screens/horario.page.dart';
 import 'package:aplicativo/Screens/notas.page.dart';
 import 'package:flutter/material.dart';
 import 'package:aplicativo/Screens/arquivos.page.dart';
-import 'login.page.dart';
 import 'Components/aviso-card.component.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,8 +22,8 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text('Rafael Barbosa'),
-              accountEmail: Text('rafaelbarbosa@acad.fanese.edu.br'),
+              accountName: Text('John Doe - 18204000'),
+              accountEmail: Text('john.doe@acad.fanese.edu.br'),
               currentAccountPicture: GestureDetector(
                 onTap: () {},
                 child: CircleAvatar(
@@ -51,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               title: Text('Notas'),
               trailing: Icon(Icons.note_add),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => NotasFaltasPage())),
+                  builder: (BuildContext context) => NotasPage())),
             ),
             ListTile(
               title: Text('Horário'),
@@ -73,27 +72,20 @@ class _HomePageState extends State<HomePage> {
             ),
             Divider(),
             ListTile(
-              title: Text('Sair'),
-              trailing: Icon(Icons.cancel),
-              onTap: () => Navigator.of(context).pop(MaterialPageRoute(
-                  builder: (BuildContext context) => LoginPage())),
-            ),
+                title: Text('Sair'),
+                trailing: Icon(Icons.cancel),
+                onTap: () => Navigator.popAndPushNamed(context, '/login')),
           ],
         ),
       ),
       body: ListView(
-          padding: EdgeInsets.only(top: 10, right: 10, left: 10),
-          children: <Widget>[
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-            avisoCardComponent(context),
-          ]),
+        padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+        children: <Widget>[
+          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
+          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
+          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
+        ],
+      ),
     );
   }
 }

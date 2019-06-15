@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import './aviso.dialog.dart';
 
-Widget avisoCardComponent(BuildContext context) {
+Widget avisoCardComponent(BuildContext context, String titulo, String descricao, String botao) {
   return new Card(
       elevation: 5,
       child: Container(
-        padding: EdgeInsets.only(
-          top: 10,
-          right: 0,
-          bottom: 10,
-          left: 0,
+        padding: EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 0
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () => showDialog(
+            context: context,
+            builder: (BuildContext context) => CustomDialog(
+              title: titulo,
+              description: descricao,
+              buttonText: botao,
+            ),
+          ),
           child: Column(
             children: <Widget>[
               ListTile(
