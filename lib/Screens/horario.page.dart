@@ -118,10 +118,10 @@ Widget semHorario(String mensagem) {
 Widget elementoHorario(
     String disciplina, String docente, String horario, String sala) {
   return new Container(
-    margin: EdgeInsets.only(bottom: 15),
+    margin: EdgeInsets.only(bottom: 5),
     child: Card(
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(10),
         alignment: Alignment.centerLeft,
         child: Column(
           children: <Widget>[

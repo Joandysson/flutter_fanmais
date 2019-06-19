@@ -10,14 +10,15 @@ Widget avisoCardComponent(BuildContext context, String titulo, String descricao,
           horizontal: 0
         ),
         child: InkWell(
-          onTap: () => showDialog(
-            context: context,
-            builder: (BuildContext context) => CustomDialog(
-              title: titulo,
-              description: descricao,
-              buttonText: botao,
-            ),
-          ),
+          // onTap: () => print('ok'),
+         onTap: () => showDialog(
+           context: context,
+           builder: (BuildContext context) => CustomDialog(
+             title: titulo,
+             description: descricao,
+             buttonText: botao,
+           ),
+         ),
           child: Column(
             children: <Widget>[
               ListTile(

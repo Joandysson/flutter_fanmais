@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
-import 'home.page.dart';
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -134,11 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => HomePage(),
-                        ),
-                      ),
+                  onPressed: () => Navigator.of(context).pushReplacementNamed('/home')
                 ),
               ),
             ),

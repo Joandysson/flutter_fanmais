@@ -74,16 +74,16 @@ class _HomePageState extends State<HomePage> {
             ListTile(
                 title: Text('Sair'),
                 trailing: Icon(Icons.cancel),
-                onTap: () => Navigator.popAndPushNamed(context, '/login')),
+                onTap: () => Navigator.pushNamedAndRemoveUntil(context, '/login', (Route<dynamic> route) => false)),
           ],
         ),
       ),
       body: ListView(
         padding: EdgeInsets.only(top: 10, right: 10, left: 10),
         children: <Widget>[
-          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
-          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
-          avisoCardComponent(context, 'Sthefane Soares', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aliquam nulla cumque, dolores commodi assumenda aperiam alias ut provident, amet sint praesentium sed. Mollitia, illo? Aut laborum est eveniet minus!', 'Fechar'),
+          avisoCardComponent(context, 'Sthefane Soares', 'Pessoal, assim como fizemos na unidade passada, seguem os links para que vocês preencham quais as atividades que vocês entregaram em cada matéria. \nObs: Colocar "Sim 00/00/2019 (data de entrega)" caso a atividade foi entregue, ou "Não" caso ela não tenha sido entregue. \nObs2: Estas planilhas servirão apenas de norte para que eu possa conferir as atividades no email. \nFavor prestar atenção às respostas. \nPreciso disto ainda hoje até as 23:59. \n* Tópicos: https://bit.ly/aula-topicos * \nJava: https://bit.ly/aula-java', 'Fechar'),
+          avisoCardComponent(context, 'Sthefane Soares', 'Pessoal, assim como fizemos na unidade passada, seguem os links para que vocês preencham quais as atividades que vocês entregaram em cada matéria. \nObs: Colocar "Sim 00/00/2019 (data de entrega)" caso a atividade foi entregue, ou "Não" caso ela não tenha sido entregue. \nObs2: Estas planilhas servirão apenas de norte para que eu possa conferir as atividades no email. \nFavor prestar atenção às respostas. \nPreciso disto ainda hoje até as 23:59. \n* Tópicos: https://bit.ly/aula-topicos * \nJava: https://bit.ly/aula-java', 'Fechar'),
+          avisoCardComponent(context, 'Sthefane Soares', 'Pessoal, assim como fizemos na unidade passada, seguem os links para que vocês preencham quais as atividades que vocês entregaram em cada matéria. \nObs: Colocar "Sim 00/00/2019 (data de entrega)" caso a atividade foi entregue, ou "Não" caso ela não tenha sido entregue. \nObs2: Estas planilhas servirão apenas de norte para que eu possa conferir as atividades no email. \nFavor prestar atenção às respostas. \nPreciso disto ainda hoje até as 23:59. \n* Tópicos: https://bit.ly/aula-topicos * \nJava: https://bit.ly/aula-java', 'Fechar'),
         ],
       ),
     );
